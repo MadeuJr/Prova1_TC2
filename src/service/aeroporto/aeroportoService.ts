@@ -17,9 +17,13 @@ export class AeroportoService {
     }
 
     deleteAeroporto(nameToRemove: string): void {
-        this.aeroportos = this.aeroportos.filter(
-            (aeroporto) => aeroporto.nome !== nameToRemove
-        );
+        try {
+            this.aeroportos = this.aeroportos.filter(
+                (aeroporto) => aeroporto.nome !== nameToRemove
+            );
+        } catch (error) {
+            throw new Error('Não foi possível deletar o aeroporto');
+        }
     }
 
     updateAeroporto(nameToUpdate: string, updatedAeroporto: Aeroporto): void {
@@ -27,10 +31,12 @@ export class AeroportoService {
             (aeroporto) => aeroporto.nome === nameToUpdate
         );
 
-        if (updateIndex >= 0) {
-            this.aeroportos[updateIndex] = updatedAeroporto;
-        } else {
-            console.log('Não foi possível atualizar o aeroporto');
-        }
+        try {
+            if (updateIndex >= 0) {
+                this.aeroportos[updateIndex] = updatedAeroporto;
+            }
+        } catch (error) {
+            throw new Error('Não foi possível atualizar o aeroporto');
+        } 
     }
 }

@@ -1,4 +1,4 @@
-export class companhiaAerea {
+export class CompanhiaAerea {
     private _nome: string;
     private _sigla: string;
     constructor(nome: string, sigla: string) {

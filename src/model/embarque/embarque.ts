@@ -1,4 +1,4 @@
-import { Passageiro } from "../passageiro/passageiro";
+import { Passageiro } from '../passageiro/passageiro';
 
 export class Embarque {
     private _portaoEmbarque: number;
@@ -9,6 +9,9 @@ export class Embarque {
         this._portaoEmbarque = portaoEmbarque;
     }
 
-
-
+    iniciarCheckIn(params: any): void {}
+    pararCheckIn(params: any): void {}
+    finalizarVoo(params: any): void {}
+    atrasarVoo(params: any): void {}
+    embarcarPassageiro(params: any): void {}
 }
