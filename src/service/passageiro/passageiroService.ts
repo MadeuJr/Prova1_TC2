@@ -11,8 +11,15 @@ export class passageiroservice {
         return this.passageiros.find((Passageiro) => Passageiro.cpf === cpf);
     }
 
-    addPassageiro(PassageiroToAdd: Passageiro): void {
-        this.passageiros.push(PassageiroToAdd);
+    addPassageiro(passageiroToAdd: Passageiro): void {
+        const passageiroExists = this.passageiros.find((passageiro) => passageiro.cpf === passageiroToAdd.cpf)
+        if (passageiroExists === undefined) {
+            this.passageiros.push(passageiroToAdd);
+        }
+        else{
+            console.log("Passageiro já cadastrado");
+            
+        }
     }
 
     deletePassageiro(CPFToRemove: string): void {

@@ -1,29 +1,27 @@
 export class Reserva {
+    private _idReserva: number;
+    private _cpfPassageiro : string;
+    private _idVoo: number;
     private _data: Date;
-    //TODO fazer a ligação de um passageiro e um Voo
 
-    constructor(data: Date) {
-        this._data = data;
+
+	constructor(idReserva: number, idVoo: number, data: Date, cpfPassageiro:string) {
+		this._idReserva = idReserva;
+		this._idVoo = idVoo;
+		this._data = data;
+        this._cpfPassageiro = cpfPassageiro;
+	}
+
+    reservar(params: any) {
+        console.log(`Reserva de id ${this._idReserva} feita`)
     }
-
-    /**
-     * Getter data
-     * @return {Date}
-     */
-    public get data(): Date {
-        return this._data;
+    pagarReserva(params: any) {
+        console.log(`Reserva de id ${this._idReserva} Paga`)
     }
-
-    /**
-     * Setter data
-     * @param {Date} value
-     */
-    public set data(value: Date) {
-        this._data = value;
+    cancelarReserva(params: any) {
+        console.log(`Reserva de id ${this._idReserva} cancelada`)
     }
-
-    reservar(params: any) {}
-    pagarReserva(params: any) {}
-    cancelarReserva(params: any) {}
-    alterarReserva(params: any) {}
+    alterarReserva(params: any) {
+        console.log(`Reserva de id ${this._idReserva} Alterada`)
+    }
 }

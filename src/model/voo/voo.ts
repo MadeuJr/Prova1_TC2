@@ -3,10 +3,12 @@
 export class Voo {
     private _tempo: Date;
     private _milhas: number;
+    private _idVoo : number;
 
-    constructor(tempo: Date, milhas: number) {
+    constructor(tempo: Date, milhas: number, idVoo: number) {
         this._tempo = tempo;
         this._milhas = milhas;
+        this._idVoo = idVoo;
     }
 
     /**
@@ -25,6 +27,16 @@ export class Voo {
         return this._milhas;
     }
 
+
+    /**
+     * Getter idVoo
+     * @return {number}
+     */
+	public get idVoo(): number {
+		return this._idVoo;
+	}
+    
+
     /**
      * Setter tempo
      * @param {Date} value
@@ -40,4 +52,13 @@ export class Voo {
     public set milhas(value: number) {
         this._milhas = value;
     }
+    
+    /**
+     * Setter idVoo
+     * @param {number} value
+     */
+	public set idVoo(value: number) {
+		this._idVoo = value;
+	}
+
 }

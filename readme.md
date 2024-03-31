@@ -10,3 +10,7 @@ O que será avaliado:
 Diagrama de Classe:
 
 <img src="diagrama_de_classe.png">
+
+## Removidos e atualizados:
+1. Ambiguidade de CC e Cartão milha. Entendemos CC como cartão de crédito e Cartão Milha como se o cartão acumula milhas ou não, então foi feita um Enun que indica se o Cartão acumula milhas ou não;
+

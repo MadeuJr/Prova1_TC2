@@ -1,15 +1,17 @@
+import { CartaoMilha } from "./enumCartaoMilha";
+
 export class Passageiro {
     private _cpf: string;
     private _nome: string;
     private _cc: string;
-    private _cartaoMilha: string;
+    private _cartaoMilha: CartaoMilha;
     private _status: string;
 
     constructor(
         cpf: string,
         nome: string,
         cc: string,
-        cartaoMilha: string,
+        cartaoMilha: CartaoMilha,
         status: string
     ) {
         this._cpf = cpf;
@@ -47,7 +49,7 @@ export class Passageiro {
      * Getter cartaoMilha
      * @return {string}
      */
-    public get cartaoMilha(): string {
+    public get cartaoMilha(): CartaoMilha {
         return this._cartaoMilha;
     }
 
@@ -87,7 +89,7 @@ export class Passageiro {
      * Setter cartaoMilha
      * @param {string} value
      */
-    public set cartaoMilha(value: string) {
+    public set cartaoMilha(value: CartaoMilha) {
         this._cartaoMilha = value;
     }
 
