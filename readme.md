@@ -6,3 +6,7 @@
 O que será avaliado:
 - O desenvolvimento utilizando a linguagem TypeScript, uso adequado de tipagem de dados e relação entre as classes (6,0);
 - Simulação do projeto (4,0);
+
+Diagrama de Classe:
+
+<img src="diagrama_de_classe.png">
