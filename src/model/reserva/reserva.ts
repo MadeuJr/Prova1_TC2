@@ -1,21 +1,29 @@
 export class Reserva {
-    private data:Date;
+    private _data: Date;
     //TODO fazer a ligação de um passageiro e um Voo
-    constructor(parameters) {
-        
+
+    constructor(data: Date) {
+        this._data = data;
     }
 
-    function Reserva(params:type) {
-        
+    /**
+     * Getter data
+     * @return {Date}
+     */
+    public get data(): Date {
+        return this._data;
     }
-    function pagarReserva(params:type) {
-        
+
+    /**
+     * Setter data
+     * @param {Date} value
+     */
+    public set data(value: Date) {
+        this._data = value;
     }
-    function cancelarReserva(params:type) {
-        
-    }
-    function alterarReserva(params:type) {
-        
-    }
-    
+
+    reservar(params: any) {}
+    pagarReserva(params: any) {}
+    cancelarReserva(params: any) {}
+    alterarReserva(params: any) {}
 }

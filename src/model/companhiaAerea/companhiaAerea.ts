@@ -6,36 +6,35 @@ export class companhiaAerea {
         this._sigla = sigla;
     }
 
-
     /**
      * Getter nome
      * @return {string}
      */
-	public get nome(): string {
-		return this._nome;
-	}
+    public get nome(): string {
+        return this._nome;
+    }
 
     /**
      * Getter sigla
      * @return {string}
      */
-	public get sigla(): string {
-		return this._sigla;
-	}
+    public get sigla(): string {
+        return this._sigla;
+    }
 
     /**
      * Setter nome
      * @param {string} value
      */
-	public set nome(value: string) {
-		this._nome = value;
-	}
+    public set nome(value: string) {
+        this._nome = value;
+    }
 
     /**
      * Setter sigla
      * @param {string} value
      */
-	public set sigla(value: string) {
-		this._sigla = value;
-	}
+    public set sigla(value: string) {
+        this._sigla = value;
+    }
 }
