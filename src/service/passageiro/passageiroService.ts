@@ -1,6 +1,6 @@
 import { Passageiro } from '../../model/passageiro/passageiro';
 
-export class passageiroservice {
+export class PassageiroService {
     private passageiros: Passageiro[] = [];
 
     getpassageiros(): Passageiro[] {
