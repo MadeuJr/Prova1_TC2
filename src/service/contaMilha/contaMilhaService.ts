@@ -8,8 +8,8 @@ export class ContaMilhaService {
         return this.contasMilhas;
     }
 
-    getContaMilhaByName(contaPassageiro: Passageiro): ContaMilha | undefined {
-        return this.contasMilhas.find((ContaMilha) => ContaMilha.donoConta === contaPassageiro);
+    getContaMilhaByPassageiroID(passageiroID: string): ContaMilha | undefined {
+        return this.contasMilhas.find((ContaMilha) => ContaMilha.donoConta.cpf === passageiroID);
     }
 
     addContaMilha(ContaMilhaToAdd: ContaMilha): void {

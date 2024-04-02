@@ -1,3 +1,4 @@
+import { ContaMilhaService } from "../../service/contaMilha/contaMilhaService";
 import { CartaoMilha } from "./enumCartaoMilha";
 
 export class Passageiro {
@@ -103,7 +104,11 @@ export class Passageiro {
 
     //TODO fazer a função que mexe com as milhas dos passageiros
 
-    creditoMilha(params: any) {}
+    creditoMilha(contaMilhaService : ContaMilhaService) {
+        
+    }
 
-    consumoMilha(params: any) {}
+    consumoMilha() {
+        
+    }
 }
