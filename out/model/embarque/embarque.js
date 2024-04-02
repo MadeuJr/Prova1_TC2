@@ -1,100 +1,83 @@
-import { Passageiro } from '../passageiro/passageiro';
-
-export class Embarque {
-    private _idEmbarque: number;
-    private _idVoo: number;
-    private _portaoEmbarque: number;
-    private _data: Date;
-
-    constructor(
-        portaoEmbarque: number,
-        data: Date,
-        voo: number,
-        idEmbarque: number
-    ) {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Embarque = void 0;
+class Embarque {
+    constructor(portaoEmbarque, data, voo, idEmbarque) {
         this._data = data;
         this._portaoEmbarque = portaoEmbarque;
         this._idVoo = voo;
         this._idEmbarque = idEmbarque;
     }
-
     /**
      * Getter voo
      * @return {number}
      */
-    public get idVoo(): number {
+    get idVoo() {
         return this._idVoo;
     }
-
     /**
      * Getter portaoEmbarque
      * @return {number}
      */
-    public get portaoEmbarque(): number {
+    get portaoEmbarque() {
         return this._portaoEmbarque;
     }
-
     /**
      * Getter data
      * @return {Date}
      */
-    public get data(): Date {
+    get data() {
         return this._data;
     }
-
     /**
      * Getter idEmbarque
      * @return {number}
      */
-    public get idEmbarque(): number {
+    get idEmbarque() {
         return this._idEmbarque;
     }
-
     /**
      * Setter voo
      * @param {number} value
      */
-    public set idVoo(value: number) {
+    set idVoo(value) {
         this._idVoo = value;
     }
-
     /**
      * Setter portaoEmbarque
      * @param {number} value
      */
-    public set portaoEmbarque(value: number) {
+    set portaoEmbarque(value) {
         this._portaoEmbarque = value;
     }
-
     /**
      * Setter data
      * @param {Date} value
      */
-    public set data(value: Date) {
+    set data(value) {
         this._data = value;
     }
-
     /**
      * Setter idEmbarque
      * @param {number} value
      */
-    public set idEmbarque(value: number) {
+    set idEmbarque(value) {
         this._idEmbarque = value;
     }
-
-    iniciarCheckIn(): void {
+    iniciarCheckIn() {
         console.log(`CheckIn do voo com ID ${this._idVoo} Iniciada`);
     }
-    pararCheckIn(): void {
+    pararCheckIn() {
         console.log(`CheckIn do voo com ID ${this._idVoo} Finalizado`);
     }
-    finalizarVoo(): void {
+    finalizarVoo() {
         console.log(`Voo com ID ${this._idVoo} Chegou ao seu destino`);
     }
-    atrasarVoo(): void {
+    atrasarVoo() {
         console.log(`Voo com ID ${this._idVoo} está Atrasado`);
     }
-    embarcarPassageiro(passageiro: Passageiro): void {
-        console.log(`Passageiro com CPF ${passageiro.cpf} embarcou no voo com ID ${this._idVoo}`)
+    embarcarPassageiro(passageiro) {
+        console.log(`Passageiro com CPF ${passageiro.cpf} embarcou no voo com ID ${this._idVoo}`);
     }
 }
+exports.Embarque = Embarque;

@@ -1,134 +1,109 @@
-import { ContaMilhaService } from '../../service/contaMilha/contaMilhaService';
-import { CartaoMilha } from './enumCartaoMilha';
-
-export class Passageiro {
-    private _cpf: string;
-    private _nome: string;
-    private _cc: string;
-    private _cartaoMilha: CartaoMilha;
-    private _status: string;
-
-    constructor(
-        cpf: string,
-        nome: string,
-        cc: string,
-        cartaoMilha: CartaoMilha,
-        status: string
-    ) {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Passageiro = void 0;
+class Passageiro {
+    constructor(cpf, nome, cc, cartaoMilha, status) {
         this._cpf = cpf;
         this._nome = nome;
         this._cc = cc;
         this._cartaoMilha = cartaoMilha;
         this._status = status;
     }
-
     /**
      * Getter cpf
      * @return {string}
      */
-    public get cpf(): string {
+    get cpf() {
         return this._cpf;
     }
-
     /**
      * Getter nome
      * @return {string}
      */
-    public get nome(): string {
+    get nome() {
         return this._nome;
     }
-
     /**
      * Getter cc
      * @return {string}
      */
-    public get cc(): string {
+    get cc() {
         return this._cc;
     }
-
     /**
      * Getter cartaoMilha
      * @return {string}
      */
-    public get cartaoMilha(): CartaoMilha {
+    get cartaoMilha() {
         return this._cartaoMilha;
     }
-
     /**
      * Getter status
      * @return {string}
      */
-    public get status(): string {
+    get status() {
         return this._status;
     }
-
     /**
      * Setter cpf
      * @param {string} value
      */
-    public set cpf(value: string) {
+    set cpf(value) {
         this._cpf = value;
     }
-
     /**
      * Setter nome
      * @param {string} value
      */
-    public set nome(value: string) {
+    set nome(value) {
         this._nome = value;
     }
-
     /**
      * Setter cc
      * @param {string} value
      */
-    public set cc(value: string) {
+    set cc(value) {
         this._cc = value;
     }
-
     /**
      * Setter cartaoMilha
      * @param {string} value
      */
-    public set cartaoMilha(value: CartaoMilha) {
+    set cartaoMilha(value) {
         this._cartaoMilha = value;
     }
-
     /**
      * Setter status
      * @param {string} value
      */
-    public set status(value: string) {
+    set status(value) {
         this._status = value;
     }
-
-    creditoMilha(contaMilhaService: ContaMilhaService, valor: number) {
-        const creditarMilhas = contaMilhaService.getContaMilhaByPassageiroID(
-            this._cpf
-        );
+    creditoMilha(contaMilhaService, valor) {
+        const creditarMilhas = contaMilhaService.getContaMilhaByPassageiroID(this._cpf);
         if (this._cartaoMilha === 0) {
             console.log('O Cartão do passageiro não credita milhas');
-        } else if (creditarMilhas !== undefined) {
+        }
+        else if (creditarMilhas !== undefined) {
             creditarMilhas.totalMilhas += valor;
             contaMilhaService.updateContaMilha(this._cpf, creditarMilhas);
-        } else {
-            console.log(
-                'O Cartão do passageiro não credita milhas ou ele não tem uma Conta de milhas'
-            );
+        }
+        else {
+            console.log('O Cartão do passageiro não credita milhas ou ele não tem uma Conta de milhas');
         }
     }
-
-    consumoMilha(contaMilhaService: ContaMilhaService, valor: number) {
-        const consumirMilhas = contaMilhaService.getContaMilhaByPassageiroID(
-            this._cpf
-        );
+    consumoMilha(contaMilhaService, valor) {
+        const consumirMilhas = contaMilhaService.getContaMilhaByPassageiroID(this._cpf);
         if (this._cartaoMilha === 0) {
             console.log('O Cartão do passageiro não credita milhas');
-        } else if (consumirMilhas !== undefined) {
+        }
+        else if (consumirMilhas !== undefined) {
             consumirMilhas.totalMilhas -= valor;
             contaMilhaService.updateContaMilha(this._cpf, consumirMilhas);
-        } else {
+        }
+        else {
             console.log('O Passageiro não tem uma Conta de Milhas');
         }
     }
 }
+exports.Passageiro = Passageiro;

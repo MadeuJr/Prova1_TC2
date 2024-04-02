@@ -1,78 +1,61 @@
-import { CartaoMilha } from '../passageiro/enumCartaoMilha';
-import { Passageiro } from '../passageiro/passageiro';
-import { Status } from './statusEnun';
-
-export class ContaMilha {
-    private _donoConta: Passageiro;
-    private _numeroConta: number;
-    private _totalMilhas: number;
-    private _status: Status;
-
-    constructor(
-        donoConta: Passageiro,
-        numeroConta: number,
-        totalMilhas: number,
-        status: Status
-    ) {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.ContaMilha = void 0;
+class ContaMilha {
+    constructor(donoConta, numeroConta, totalMilhas, status) {
         this._donoConta = donoConta;
         this._numeroConta = numeroConta;
         this._totalMilhas = totalMilhas;
         this._status = status;
     }
-
     /**
      * Getter donoConta
      * @return {Passageiro}
      */
-    public get donoConta(): Passageiro {
+    get donoConta() {
         return this._donoConta;
     }
-
     /**
      * Getter numeroConta
      * @return {number}
      */
-    public get numeroConta(): number {
+    get numeroConta() {
         return this._numeroConta;
     }
-
     /**
      * Getter totalMilhas
      * @return {number}
      */
-    public get totalMilhas(): number {
+    get totalMilhas() {
         return this._totalMilhas;
     }
-
     /**
      * Getter status
      * @return {Status}
      */
-    public get status(): Status {
+    get status() {
         return this._status;
     }
-
     /**
      * Setter numeroConta
      * @param {number} value
      */
-    public set numeroConta(value: number) {
+    set numeroConta(value) {
         this._numeroConta = value;
     }
-
     /**
      * Setter totalMilhas
      * @param {number} value
      */
-    public set totalMilhas(value: number) {
+    set totalMilhas(value) {
         this._totalMilhas = value;
     }
-
     /**
      * Setter status
      * @param {Status} value
      */
-    public set status(value: Status) {
+    set status(value) {
         this._status = value;
     }
 }
+exports.ContaMilha = ContaMilha;

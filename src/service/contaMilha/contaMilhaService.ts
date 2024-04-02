@@ -1,4 +1,5 @@
 import { ContaMilha } from "../../model/contaMilha/contaMilha";
+import { CartaoMilha } from "../../model/passageiro/enumCartaoMilha";
 import { Passageiro } from "../../model/passageiro/passageiro";
 
 export class ContaMilhaService {
@@ -13,7 +14,13 @@ export class ContaMilhaService {
     }
 
     addContaMilha(ContaMilhaToAdd: ContaMilha): void {
-        this.contasMilhas.push(ContaMilhaToAdd);
+        if (ContaMilhaToAdd.donoConta.cartaoMilha === CartaoMilha.SIM) {
+            this.contasMilhas.push(ContaMilhaToAdd);
+        }
+        else{
+            console.log(`Cartão do passageiro com CPF ${ContaMilhaToAdd.donoConta.cpf} não acumula milhas`);
+            
+        }
     }
 
     deleteContaMilha(contaPassageiroToRemove: Passageiro): void {
@@ -26,9 +33,9 @@ export class ContaMilhaService {
        }
     }
 
-    updateContaMilha(contaPassageiroToUpdate: Passageiro, updatedContaMilha: ContaMilha): void {
+    updateContaMilha(cpfPassageiroToUpdate: string, updatedContaMilha: ContaMilha): void {
         const updateIndex = this.contasMilhas.findIndex(
-            (ContaMilha) => ContaMilha.donoConta === contaPassageiroToUpdate
+            (ContaMilha) => ContaMilha.donoConta.cpf === cpfPassageiroToUpdate
         );
             
        try {

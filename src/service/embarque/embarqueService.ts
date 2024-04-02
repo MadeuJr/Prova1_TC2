@@ -1,7 +1,15 @@
 import { Embarque } from '../../model/embarque/embarque';
+import { VooService } from '../voo/vooService';
 
 export class EmbarqueService {
     private embarques: Embarque[] = [];
+    private _vooService: VooService;
+    
+
+	constructor(vooService: VooService) {
+		this._vooService = vooService;
+	}
+    
 
     getembarques(): Embarque[] {
         return this.embarques;
@@ -15,14 +23,15 @@ export class EmbarqueService {
         const embarqueIdExists = this.embarques.find(
             (embarque) => embarque.idEmbarque === EmbarqueToAdd.idEmbarque
         );
-        const vooExists = this.embarques.find(
-            (embarque) => embarque.voo === EmbarqueToAdd.voo
+        const vooArray = this._vooService.getVoos()
+        const vooExists = vooArray.find(
+            (voo) => voo.idVoo === EmbarqueToAdd.idVoo
         );
-        if (embarqueIdExists === undefined && vooExists === undefined) {
+        if (embarqueIdExists === undefined && vooExists !== undefined) {
             this.embarques.push(EmbarqueToAdd);
         } else {
             console.log(
-                'Não foi possivel adicionar Embarque porque o ID de embarque já existe.'
+                'Não foi possivel adicionar Embarque.'
             );
         }
     }

@@ -35,7 +35,7 @@ export class ReservaService {
 
         try {
             if (
-                this.checkPassageiroAndVoo(reservaToAdd) === true ||
+                this.checkPassageiroAndVoo(reservaToAdd) === true &&
                 ReservaExists === undefined
             ) {
                 this._reservas.push(reservaToAdd);
@@ -48,7 +48,7 @@ export class ReservaService {
             
             if (error instanceof Error) {
                 if (error.message === 'Error Passageiro e Voo') {
-                    console.error('Passageiro e voo da reserva informada não foram encontrados')
+                    console.error('Passageiro ou voo da reserva informada não foram encontrados')
                 } else if (error.message === 'Error Reserva') {
                     console.error('Reserva já cadastrada')
                 } else {
